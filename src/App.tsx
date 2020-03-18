@@ -10,7 +10,6 @@ import Countries from './pages/countries/Countries';
 const CoronaTrackerRoutes = [
   { path: "/", component: <Global /> },
   { path: "/countries", component: <Countries /> },
-  { path: '/updates', component: <p>עדכונים</p>},
 ];
 
 const App = () => {

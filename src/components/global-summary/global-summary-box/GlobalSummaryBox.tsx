@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+  SummaryBox,
+  SummaryBoxTitle,
+  SummaryBoxSubtitle
+} from "./GlobalSummaryBoxStyle";
 
 interface GlobalSummaryBoxProps {
     globalData: number[];
@@ -12,10 +17,14 @@ const GlobalSummaryBox = (props: GlobalSummaryBoxProps) => {
         <>
             {
                 globalData.map((item, index) => {                    
-                    return <div key={index}>
-                        <h1>{titles[index]}</h1>
-                        <span>{item}</span>
-                    </div>
+                    return (
+                      <SummaryBox key={index}>
+                        <SummaryBoxTitle variant="h1">
+                          {titles[index]}
+                        </SummaryBoxTitle>
+                        <SummaryBoxSubtitle variant="h2">{item}</SummaryBoxSubtitle>
+                      </SummaryBox>
+                    );
                 })
             }
         </>

@@ -1,18 +1,4 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-// import RubikRegularFont from '../assets/fonts/Rubik-Regular.ttf';
-// import RubikBold from '../assets/fonts/Rubik-Bold.ttf';
-
-// const RubikRegular = {
-//   fontFamily: 'rubik-regular',
-//   fontStyle: 'normal',
-//   fontDisplay: 'swap',
-//   fontWeight: 400,
-//   src: `
-//     local('Rubik'),
-//     local('Rubik-Regular'),
-//     url(${RubikRegularFont}) format('ttf')
-//   `,
-// };
 
 const theme = createMuiTheme({
   direction: "rtl",
@@ -24,11 +10,23 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: "#fff",
-      dark: '#424242',
+      dark: 'rgba(0, 0, 0, 0.26)',
       light: 'rgba(255, 255, 255, 0.7)'
     }
   },
   typography: {
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      'Rubik',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
     htmlFontSize: 10
   },
   overrides: {
@@ -36,7 +34,7 @@ const theme = createMuiTheme({
       root: {
         height: "10rem"
       }
-    }
+    }, 
   }
 });
 

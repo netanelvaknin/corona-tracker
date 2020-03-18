@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PreviewTable from '../../components/preview-table/PreviewTable';
+import TextField from "@material-ui/core/TextField";
+import { Form, InputInstruction } from "./CountriesStyle";
+import ScrollTopWrapper from '../../components/scroll-top-wrapper/ScrollTopWrapper';
 
 const Countries = () => {
     const [filteredCountry, setFilteredCountry] = useState('');
@@ -21,10 +24,22 @@ const Countries = () => {
     });
 
     return (
-        <>
-            <input type="text" onChange={filterCountries} />
-            <PreviewTable countriesData={filteredCountries} />
-        </>
+      <>
+        <ScrollTopWrapper>
+          <Form>
+            <TextField
+              id="outlined-search"
+              label="Search"
+              type="search"
+              variant="outlined"
+              onChange={filterCountries}
+            />
+            <InputInstruction>חיפוש המדינות באנגלית בלבד</InputInstruction>
+          </Form>
+
+          <PreviewTable countriesData={filteredCountries} />
+        </ScrollTopWrapper>
+      </>
     );
 }
 
